@@ -1,28 +1,3 @@
-import { Image } from "react-native";
-import { Asset } from "expo-asset";
-import Font from "expo-font";
-
-import preLoadFonts from "./preLoadFonts";
-import preLoadImages from "./preLoadImages";
-
-const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
-
-const cacheImages = (images) =>
-  Object.values(images).map((image) => {
-    if (typeof image === "string") {
-      return Image.prefetch(image);
-    }
-
-    return Asset.fromModule(image).downloadAsync();
-  });
-
-const loadAssetsAsync = () => {
-  const fontsAssets = cacheFonts(preLoadFonts);
-  const imagesAssets = cacheImages(preLoadImages);
-
-  return Promise.all([...fontsAssets, ...imagesAssets]);
-};
-
 const formatTime = (sec) => {
   const padTime = (num, size) => `000${num}`.slice(size * -1);
   const time = parseFloat(sec).toFixed(3);
@@ -32,8 +7,5 @@ const formatTime = (sec) => {
 };
 
 export default {
-  cacheFonts,
-  cacheImages,
-  loadAssetsAsync,
   formatTime,
 };
