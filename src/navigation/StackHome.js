@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import HomeScreen from "../screens/Home";
 import AlbumScreen from "../screens/Album";
@@ -14,7 +13,11 @@ export default function StackHome() {
       }}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Album" component={AlbumScreen} />
+      <Stack.Screen
+        name="Album"
+        component={AlbumScreen}
+        initialParams={{ title: "ExtraOrdinary Machine" }}
+      />
     </Stack.Navigator>
   );
 }

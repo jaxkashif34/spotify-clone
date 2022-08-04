@@ -37,7 +37,7 @@ export default function App() {
 
         await Promise.all([...imageAssets, ...fontAssets]);
 
-        await console.log("complete");
+        await console.log("Assets loaded successfully");
       } catch (e) {
         // You might want to provide this error information to an error reporting service
         console.warn(e);

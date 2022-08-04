@@ -43,7 +43,7 @@ export default function TabNavigation() {
       <Tab.Screen
         name="StackHome"
         component={StackHome}
-        options={{ tabBarLabel: "HomeApp" }}
+        options={{ tabBarLabel: "Home" }}
       />
       <Tab.Screen
         name="StackSearch"
