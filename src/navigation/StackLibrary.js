@@ -1,10 +1,13 @@
-import { View, Text } from "react-native";
 import React from "react";
+import Library from "../screens/Library";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
 
 export default function StackLibrary() {
   return (
-    <View>
-      <Text style={{ color: "white" }}>StackLibrary</Text>
-    </View>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Library" component={Library} />
+    </Stack.Navigator>
   );
 }
