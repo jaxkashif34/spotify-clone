@@ -2,6 +2,8 @@ import React from "react";
 import TabNavigation from "./TabNavigation";
 import { NavigationContainer, DarkTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ModalMusicPlayer from "../screens/ModalMusicPlayer";
+import ModalMoreOptions from "../screens/ModalMoreOptions";
 
 const Stack = createNativeStackNavigator();
 export default function RootStack() {
@@ -11,6 +13,15 @@ export default function RootStack() {
         screenOptions={{ presentation: "fullScreenModal", headerShown: false }}
       >
         <Stack.Screen name="TabNavigation" component={TabNavigation} />
+        <Stack.Screen name="ModalMusicPlayer" component={ModalMusicPlayer} />
+        <Stack.Screen
+          name="ModalMoreOptions"
+          component={ModalMoreOptions}
+          options={{
+            animation: "fade",
+            presentation: "transparentModal",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

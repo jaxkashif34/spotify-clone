@@ -13,7 +13,7 @@ export default function lineItemCategory({
   icon,
   onPress,
   title,
-  disableRightSide = null,
+  disableRightSide = true,
   iconLibrary = "Feather",
 }) {
   let iconDisplay;

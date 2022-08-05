@@ -67,7 +67,7 @@ export default function CustomTabBar({ descriptors, navigation, state }) {
             >
               <Icon active={isFocused} />
 
-              <Text style={[styles.lable, { color }]}>{label}</Text>
+              <Text style={[styles.label, { color }]}>{label}</Text>
             </TouchableOpacity>
           );
         })}
