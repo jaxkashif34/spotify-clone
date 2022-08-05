@@ -93,55 +93,55 @@ export default {
   mB2: { marginBottom: space2 },
   mB3: { marginBottom: space3 },
   // left
-  mL1: { marginBottom: space1 },
-  mL2: { marginBottom: space2 },
-  mL3: { marginBottom: space3 },
+  mL1: { marginLeft: space1 },
+  mL2: { marginLeft: space2 },
+  mL3: { marginLeft: space3 },
   // right
-  mR1: { marginBottom: space1 },
-  mR2: { marginBottom: space2 },
-  mR3: { marginBottom: space3 },
+  mR1: { marginLeft: space1 },
+  mR2: { marginLeft: space2 },
+  mR3: { marginLeft: space3 },
   // top
   mTHalf: { marginTop: spaceHalf },
-  mT1: { marginBottom: space1 },
-  mT2: { marginBottom: space2 },
-  mT3: { marginBottom: space3 },
+  mT1: { marginTop: space1 },
+  mT2: { marginTop: space2 },
+  mT3: { marginTop: space3 },
   //   horizontal
-  mH1: { marginBottom: space1 },
-  mH2: { marginBottom: space2 },
-  mH3: { marginBottom: space3 },
+  mH1: { marginHorizontal: space1 },
+  mH2: { marginHorizontal: space2 },
+  mH3: { marginHorizontal: space3 },
 
   //   vertical
-  mV1: { marginBottom: space1 },
-  mV2: { marginBottom: space2 },
-  mV3: { marginBottom: space3 },
+  mV1: { marginVertical: space1 },
+  mV2: { marginVertical: space2 },
+  mV3: { marginVertical: space3 },
 
   //   padding
 
   pHalf: { padding: spaceHalf },
 
   //   all sides
-  p1: { marginBottom: space1 },
-  p2: { marginBottom: space2 },
-  p3: { marginBottom: space3 },
+  p1: { padding: space1 },
+  p2: { padding: space2 },
+  p3: { padding: space3 },
 
   //   top
-  pT1: { marginBottom: space1 },
-  pT2: { marginBottom: space2 },
-  pT3: { marginBottom: space3 },
+  pT1: { paddingTop: space1 },
+  pT2: { paddingTop: space2 },
+  pT3: { paddingTop: space3 },
   //   right
-  pR1: { marginBottom: space1 },
-  pR2: { marginBottom: space2 },
-  pR3: { marginBottom: space3 },
+  pR1: { paddingRight: space1 },
+  pR2: { paddingRight: space2 },
+  pR3: { paddingRight: space3 },
 
   //   bottom
-  pB1: { marginBottom: space1 },
-  pB2: { marginBottom: space2 },
-  pB3: { marginBottom: space3 },
+  pB1: { paddingBottom: space1 },
+  pB2: { paddingBottom: space2 },
+  pB3: { paddingBottom: space3 },
 
   //   left
-  pL1: { marginBottom: space1 },
-  pL2: { marginBottom: space2 },
-  pL3: { marginBottom: space3 },
+  pL1: { paddingLeft: space1 },
+  pL2: { paddingLeft: space2 },
+  pL3: { paddingLeft: space3 },
 
   //   horizontal
 

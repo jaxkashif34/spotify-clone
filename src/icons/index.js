@@ -8,8 +8,13 @@ export default function SvgIcon({
   active = false,
   size = 24,
   fillRule = "evenodd",
+  fillColor,
 }) {
-  const fill = active ? colors.white : colors.greyInactive;
+  const fill = active
+    ? colors.white
+    : fillColor
+    ? fillColor
+    : colors.greyInactive;
   return (
     <Svg height={size} width={size} viewBox="0 0 512 512">
       <Path d={path} fill={fill} fillRule={fillRule} />
@@ -20,6 +25,6 @@ export default function SvgIcon({
 SvgIcon.prototype = {
   data: {
     active: PropTypes.bool,
-    path: PropTypes.string,
+    path: PropTypes.string.isRequired,
   },
 };

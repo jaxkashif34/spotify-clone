@@ -12,8 +12,8 @@ import {
 } from "../icons/Paths";
 import { colors } from "../constants";
 import CustomTabBar from "../components/CustomTabBar";
-import Library from "../screens/Library";
-import Search from "../screens/Search";
+import StackLibrary from "./StackLibrary";
+import StackSearch from "./StackSearch";
 
 const getIcon = (active, activeState, inActiveState) => (
   <SvgIcon path={active ? activeState : inActiveState} active={active} />
@@ -47,12 +47,12 @@ export default function TabNavigation() {
       />
       <Tab.Screen
         name="StackSearch"
-        component={Search}
+        component={StackSearch}
         options={{ tabBarLabel: "Search" }}
       />
       <Tab.Screen
         name="StackLibrary"
-        component={Library}
+        component={StackLibrary}
         options={{ tabBarLabel: "Library" }}
       />
     </Tab.Navigator>
