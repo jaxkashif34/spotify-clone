@@ -79,7 +79,15 @@ export default function Album({ navigation, route }) {
   if (!album) {
     return (
       <View style={[gStyle.container, gStyle.flexCenter]}>
-        <Text style={{ color: "white" }}>{`Album: ${title}`}</Text>
+        <Text
+          style={[
+            { color: "white", marginBottom: 15 },
+            gStyle.textSpotifyBold12,
+          ]}
+        >{`Album: ${title}`}</Text>
+        <Text style={[{ color: "red" }, gStyle.textSpotifyBold20]}>
+          This Song Is Not Available Anymore
+        </Text>
       </View>
     );
   }

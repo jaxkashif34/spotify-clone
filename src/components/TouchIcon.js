@@ -4,10 +4,11 @@ import { gStyle } from "../constants";
 import PropTypes from "prop-types";
 
 export default function TouchIcon({ data }) {
+  const defaultFun = () => null;
   return (
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
-      onPress={data?.onPress}
+      onPress={data?.onPress || defaultFun}
       hitSlop={{ top: 5, bottom: 5, right: 5, left: 5 }}
       style={[gStyle.flexCenter, data?.style]}
     >
@@ -20,7 +21,7 @@ TouchIcon.propTypes = {
   data: PropTypes.shape({
     // required
     icon: PropTypes.element.isRequired,
-    onPress: PropTypes.func.isRequired,
+    onPress: PropTypes.func,
 
     // optional
     iconSize: PropTypes.number,

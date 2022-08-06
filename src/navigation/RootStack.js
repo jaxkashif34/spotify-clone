@@ -13,7 +13,11 @@ export default function RootStack() {
         screenOptions={{ presentation: "fullScreenModal", headerShown: false }}
       >
         <Stack.Screen name="TabNavigation" component={TabNavigation} />
-        <Stack.Screen name="ModalMusicPlayer" component={ModalMusicPlayer} />
+        <Stack.Screen
+          name="ModalMusicPlayer"
+          component={ModalMusicPlayer}
+          options={{ animation: "slide_from_bottom" }}
+        />
         <Stack.Screen
           name="ModalMoreOptions"
           component={ModalMoreOptions}
