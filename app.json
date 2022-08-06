@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-airbnb-clone",
-    "slug": "react-native-airbnb-clone",
+    "name": "spotifyclone",
+    "slug": "spotify-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
