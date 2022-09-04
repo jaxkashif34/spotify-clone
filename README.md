@@ -45,17 +45,17 @@ I'm a Web developer...
     
 # Screenshots
 ## Home Screen
-![Home Screen ](./home.jpg)
+![Home Screen ](./screenshots/home.jpg)
 
 ## Search Screen 
-![Search Screen ](./search.jpg)
+![Search Screen ](./screenshots/search.jpg)
 
 ## Library Screen
-![Library Screen ](./library.jpg)
+![Library Screen ](./screenshots/library.jpg)
 
 ## Song Screen
-![Song Screen ](./song.jpg)
+![Song Screen ](./screenshots/song.jpg)
 
 ## More Options Screen
-![More Options Screen ](./more.jpg)
+![More Options Screen ](./screenshots/more.jpg)
 
