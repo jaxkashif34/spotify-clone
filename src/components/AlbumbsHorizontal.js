@@ -5,9 +5,10 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
+  Pressable,
 } from "react-native";
 import React from "react";
-import { colors, gStyle, images } from "../constants";
+import { colors, gStyle, savedImages } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 export default function AlbumbsHorizontal({ data, heading, tagline }) {
   const navigation = useNavigation();
@@ -22,7 +23,7 @@ export default function AlbumbsHorizontal({ data, heading, tagline }) {
         keyExtractor={({ id }) => id.toString()}
         horizontal
         renderItem={({ item }) => (
-          <TouchableOpacity
+          <Pressable
             activeOpacity={gStyle.activeOpacity}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
             onPress={() => navigation.navigate("Album", { title: item.title })}
@@ -31,15 +32,15 @@ export default function AlbumbsHorizontal({ data, heading, tagline }) {
             <View style={styles.image}>
               {item.image && (
                 <Image
-                  source={images[item.image]}
+                  source={savedImages[item.image]}
                   resizeMode="contain"
                   style={styles.image}
                 />
               )}
             </View>
 
-            <Text style={styles.title}>{item.title}</Text>
-          </TouchableOpacity>
+             <Text style={styles.title}>{item.title}</Text>
+           </Pressable>
         )}
       />
     </View>

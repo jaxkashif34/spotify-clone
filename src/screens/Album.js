@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useContext, useRef, useState } from "react";
 import { Context } from "../context";
-import { colors, device, gStyle, images } from "../constants";
+import { colors, device, gStyle, savedImages } from "../constants";
 import { BlurView } from "expo-blur";
 import LinearGradient from "../components/LinearGradient";
 import Albums from "../mock/albumb";
@@ -91,6 +91,7 @@ export default function Album({ navigation, route }) {
       </View>
     );
   }
+  console.log({showMusicBar})
   return (
     <View style={gStyle.container}>
       {!showMusicBar && (
@@ -118,9 +119,9 @@ export default function Album({ navigation, route }) {
             data={{
               icon: <Feather color={colors.white} name="more-horizontal" />,
               onPress: () => {
-                updateState("showMusicBar", !showMusicBar);
+                updateState("showMusicBar", true);
 
-                navigation.navigate("ModalMoreOptions", { album });
+                return navigation.navigate("ModalMoreOptions", { album });
               },
             }}
           />
@@ -131,7 +132,7 @@ export default function Album({ navigation, route }) {
           <LinearGradient fill={album.backgroundColor} />
         </View>
         <View style={styles.containerImage}>
-          <Image source={images[album.image]} style={styles.image} />
+          <Image source={savedImages[album.image]} style={styles.image} />
         </View>
         <View style={styles.containerTitle}>
           <Text ellipsizeMode="tail" numberOfLines={1} style={styles.title}>

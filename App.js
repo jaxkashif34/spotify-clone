@@ -1,29 +1,28 @@
-import RootStack from "./src/navigation/RootStack";
-import AppState from "./src/context";
-import { StatusBar, Text, View } from "react-native";
-import { useEffect, useState } from "react";
-import * as SplashScreen from "expo-splash-screen";
-import * as Font from "expo-font";
-import { Asset } from "expo-asset";
-import savedImages from "./src/constants/preLoadImages";
-import savedFonts from "./src/constants/preLoadFonts";
-import { gStyle } from "./src/constants";
+import RootStack from './src/navigation/RootStack';
+import AppState from './src/context';
+import { StatusBar, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import * as SplashScreen from 'expo-splash-screen';
+import { loadAsync } from 'expo-font';
+import { Asset } from 'expo-asset';
+import { savedImages } from './src/constants/preLoadImages';
+import { savedFonts } from './src/constants/preLoadFonts';
+import { gStyle } from './src/constants';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
 
-  function cacheImages(images) {
-    return Object.values(images).map((image) => {
-      if (typeof image === "string") {
-        return Image.prefetch(image);
-      } else {
-        return Asset.fromModule(image).downloadAsync();
-      }
-    });
+  async function cacheImages() {
+    for (const images of Object.values(savedImages)) {
+      await Asset.fromModule(images).downloadAsync();
+    }
   }
 
-  function cacheFonts(fonts) {
-    return fonts.map((font) => Font.loadAsync(font));
+  async function cacheFonts() {
+    await loadAsync({
+      // have to spread the object into the loadAsync function or it will not work
+      ...savedFonts,
+    });
   }
 
   // Load any resources or data that you need prior to rendering the app
@@ -32,18 +31,16 @@ export default function App() {
       try {
         SplashScreen.preventAutoHideAsync();
 
-        const imageAssets = cacheImages(savedImages);
-        const fontAssets = cacheFonts(savedFonts);
+        await cacheImages();
+        await cacheFonts();
 
-        await Promise.all([...imageAssets, ...fontAssets]);
-
-        await console.log("Assets loaded successfully");
+        console.log('Assets loaded successfully');
       } catch (e) {
         // You might want to provide this error information to an error reporting service
-        console.warn(e);
+        console.warn(e.message);
       } finally {
-        setAppIsReady(true);
         SplashScreen.hideAsync();
+        setAppIsReady(true);
       }
     }
 
@@ -51,8 +48,9 @@ export default function App() {
   }, []);
 
   if (!appIsReady) {
+    // Todo: need to add a proper loading screen here
     return (
-      <View style={{ flex: 1, backgroundColor: "orange" }}>
+      <View style={{ flex: 1, backgroundColor: 'orange' }}>
         <Text>Loading Assets...</Text>
       </View>
     );

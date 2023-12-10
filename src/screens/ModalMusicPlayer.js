@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import React, { useContext, useState } from "react";
-import { colors, device, func, gStyle, images } from "../constants";
+import { colors, device, func, gStyle, savedImages } from "../constants";
 import ModalHeader from "../components/ModalHeader";
 import { Feather, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -19,18 +19,19 @@ export default function ModalMusicPlayer() {
   const favoriteColor = favorited ? colors.bradnPrimary : colors.white;
   const iconPlay = pause ? "pause-circle" : "play-circle";
   return (
-    <View style={gStyle.container}>
-      <ModalHeader
+    <View>
+      <Text>Modal Music player</Text>
+      {/* <ModalHeader
         data={{
           left: <Feather name="chevron-down" color={colors.greyLight} />,
           leftPress: () => navigation.goBack(),
           right: <Feather name="more-horizontal" color={colors.greyLight} />,
           text: currentSongData.album,
         }}
-      />
+      /> */}
 
-      <View style={gStyle.p3}>
-        <Image source={images[currentSongData.image]} style={styles.image} />
+      {/* <View style={gStyle.p3}>
+        <Image source={savedImages[currentSongData.image]} style={styles.image} />
 
         <View style={[gStyle.flexRowSpace, styles.containerDetails]}>
           <View style={styles.containerSong}>
@@ -114,7 +115,7 @@ export default function ModalMusicPlayer() {
             }}
           />
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }

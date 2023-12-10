@@ -2,10 +2,12 @@ import React from "react";
 import HomeScreen from "../screens/Home";
 import AlbumScreen from "../screens/Album";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useTheme } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
 export default function StackHome() {
+  const theme = useTheme() // we can get the access of theme object anywhere in a component that is rendered inside the navigation container
   return (
     <Stack.Navigator
       screenOptions={{

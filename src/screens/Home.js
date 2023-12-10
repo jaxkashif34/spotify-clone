@@ -1,4 +1,4 @@
-import { View, Animated, StyleSheet } from "react-native";
+import { View, Animated, StyleSheet, Text } from "react-native";
 import React, { useRef } from "react";
 import { colors, device, gStyle } from "../constants";
 import { FontAwesome } from "@expo/vector-icons";
